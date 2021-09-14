@@ -44,6 +44,16 @@ namespace EFCorePractice
                 var temp = productContext.products.Where(s => s.id == str).FirstOrDefault();
                 Console.WriteLine(temp.name);
         }
+        public void AddRecord()
+        {
+            var add = new Product()
+            {
+                id = 104,
+                name = "pooja verma"
+            };
+            productContext.products.Add(add);
+            productContext.SaveChanges();
+        }
     }
 
     class Program
@@ -51,7 +61,8 @@ namespace EFCorePractice
         public static void Main()
         {
             ProductOperation product = new ProductOperation();
-            product.FetchProduct(101);
+           // product.FetchProduct(101);
+           product.AddRecord();
         }
     }
 }
