@@ -44,7 +44,7 @@ namespace EFCorePractice
                 var temp = productContext.products.Where(s => s.id == str).FirstOrDefault();
                 Console.WriteLine(temp.name);
         }
-        public void AddRecord()
+        /* public void AddRecord()
         {
             var add = new Product()
             {
@@ -53,6 +53,26 @@ namespace EFCorePractice
             };
             productContext.products.Add(add);
             productContext.SaveChanges();
+        } */
+
+        public void UpdateRecord()
+        {
+            var update =productContext.products.First<Product>();
+            {
+                update.name = "deepti gupta";
+            };
+            productContext.products.Update(update);
+            productContext.SaveChanges();
+        }
+
+        public void Deleterecord(int id)
+        {
+            var delete = productContext.products.Find(id);
+            if(delete!= null)
+            {
+                productContext.products.Remove(delete);
+                productContext.SaveChanges();
+            }
         }
     }
 
@@ -61,8 +81,10 @@ namespace EFCorePractice
         public static void Main()
         {
             ProductOperation product = new ProductOperation();
-           // product.FetchProduct(101);
-           product.AddRecord();
+           //product.FetchProduct(101);
+           //product.AddRecord();
+           //product.UpdateRecord();
+           product.Deleterecord(101);
         }
     }
 }
