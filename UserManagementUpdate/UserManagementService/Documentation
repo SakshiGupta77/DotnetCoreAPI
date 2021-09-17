@@ -1,0 +1,13 @@
+REMARK:
+    *controller is unstructured due to not applied proper 
+    i) attribute routing, 
+    ii) rout prefix,
+    iii) rout constraint and 
+    iv) rout parameter.  (DONE)
+    *there is no model validation(Data annotation or fluent model valaidation).
+    dotnet add pckage
+    *there is a lack of joining because atleast you need to have two tables for relationship. Give proper demostration (One To One) or (One To Many).
+    **do write Asyncronous programming by implementing class (Async ans Await).
+    Security:
+    ***controller is insecure means their is no authentication so, we need to write logic for securing the controller using custom Middelware.
+    *need to handle runtime exceptions using try, throw, catch.
